@@ -27,7 +27,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/custom-theme.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/style/normalize.css"
             ],
             "scripts": []
           },
@@ -102,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "clinica-dashboard"
+  "defaultProject": "clinica-dashboard",
+  "cli": {
+    "analytics": "a5cb0fcc-0c6f-40c2-b8b1-4b85af34e8b3"
+  }
 }
