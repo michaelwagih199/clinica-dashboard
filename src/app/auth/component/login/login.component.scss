@@ -1,1 +1,8 @@
+$primary: #2196F3;
 
+.login-bg {   
+    height: 100vh;
+    // background: url("https://i.imgur.com/HgflTDf.jpg") 50% fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(https://images.pexels.com/photos/3183198/pexels-photo-3183198.jpeg) ;
+    background-size: cover;
+}

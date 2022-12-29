@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup  } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthenticationService } from '../../service/authentication.service';
 
 
 @Component({
@@ -15,11 +17,11 @@ export class LoginComponent implements OnInit {
   password: any;
 
   constructor(
-  
-  ) {}
+    private authService: AuthenticationService, private _snackBar: MatSnackBar,) { }
 
   ngOnInit(): void {
     this.validateform();
+
   }
 
   /**
@@ -27,11 +29,27 @@ export class LoginComponent implements OnInit {
    */
 
   onLogin() {
-  
+    const x = this.authService.authenticate('SuperAdmin', 'SuperAdmin');
+    console.log("kjfvnk");
+    
   }
 
+
   validateform() {
-   
+
+
   }
+
+
+    /**
+   * ui ux 
+   */
+
+     openSnackBar(message: string, action: string) {
+      this._snackBar.open(message, action, {
+        duration: 2000,
+      });
+    }
+  
 
 }
