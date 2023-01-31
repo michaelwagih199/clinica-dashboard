@@ -10,7 +10,7 @@ body {
 }
 
 body {
-    background-color: #E8F9FD;
+    @apply bg-gray-50;
     margin: 0;
     font-family: "Lato", sans-serif;
 }

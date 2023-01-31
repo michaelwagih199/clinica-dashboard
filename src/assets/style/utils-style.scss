@@ -147,7 +147,7 @@ $dark_blue: #2155cd;
 
 //custom component using tailwind sss
 .poli-login-btn{
-    @apply poli-bg-dark rounded-full p-1 md:p-2 font-medium border-2 text-white uppercase w-full;
+    @apply poli-bg-dark rounded-full p-1 md:p-2 font-medium border-2 text-white uppercase w-full hover:bg-cyan-600;
 }
 .poli-login-input{
     
