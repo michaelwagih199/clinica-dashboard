@@ -11,8 +11,8 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./admin-home/admin-home.module').then(m => m.AdminHomeModule),
   },
-  {path: '404', component: NotFoundComponent},
-  {path: '**', redirectTo: '/404'}
+  // {path: '404', component: NotFoundComponent},
+  // {path: '**', redirectTo: '/404'}
 
 ];
 

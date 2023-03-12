@@ -7,6 +7,10 @@ export class AppResources{
         "login-uri": "/signin",
         "signup-uri": "/signup"
       },
+      "home":{
+        "base-uri": '/v1/home',
+        "get-menu-items": '/menu'
+      },
       "patient": {
         "base-uri": "api/patient",
         "get-all": "all",

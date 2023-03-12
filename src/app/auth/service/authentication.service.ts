@@ -20,6 +20,8 @@ export class JwtResponse {
   providedIn: 'root',
 })
 export class AuthenticationService {
+ TOKEN_KEY = 'auth-token';
+
   baseUrl = environment.baseUrl + '/auth';
 
   constructor(private httpClient: HttpClient) { }
@@ -32,7 +34,7 @@ export class AuthenticationService {
             // sessionStorage.setItem('username', JSON.stringify(userName));
             sessionStorage.setItem('username', username);
             let tokenStr = userData.data.token;
-            sessionStorage.setItem('token', tokenStr);
+            sessionStorage.setItem(this.TOKEN_KEY, tokenStr);
           }
         }))
   }
