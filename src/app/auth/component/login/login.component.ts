@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { ClincaResponse } from 'src/app/core/clinica-responce';
-import { LoginResponse } from '../../models/login-resbonse';
 import { AuthenticationService } from '../../service/authentication.service';
 
 
@@ -19,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService, private formBuilder: FormBuilder,
-     private _snackBar: MatSnackBar,private router: Router) { }
+    private _snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit(): void {
     this.validateform();
@@ -41,16 +39,16 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.formControls['userName'].value);
     this.authService.
-    authenticate(this.formControls['userName'].value,this.formControls['password'].value)
-    .subscribe(data => {
-      this.router.navigateByUrl('/home');
-    }, error => {
-      console.log(error.message);
-      this.openSnackBar(error, '');
-    });
-
-
-
+      authenticate(this.formControls['userName'].value, this.formControls['password'].value)
+      .subscribe(() => this.router.navigateByUrl('/home'), 
+      error => {
+        console.log(error);
+        if (error.defaultMessage)
+          this.openSnackBar(`${error.field} ${error.defaultMessage}`, '');
+        else if (error)
+          this.openSnackBar(error, '');
+        console.log(error);
+      });
   }
 
   /**
@@ -64,8 +62,5 @@ export class LoginComponent implements OnInit {
   }
 
 
-}
-function MustMatch(arg0: string, arg1: string): any {
-  throw new Error('Function not implemented.');
 }
 

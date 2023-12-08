@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
-import { LoginResponse } from 'src/app/auth/models/login-resbonse';
+import { Observable } from 'rxjs';
 import { ClincaResponse } from 'src/app/core/clinica-responce';
 import { AppResources } from 'src/app/core/resources-config';
 import { environment } from 'src/environments/environment';

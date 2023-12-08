@@ -1,8 +1,8 @@
 <div class="flex">
     <div class="bg-white flex flex-col w-64 h-screen px-4 py-8 overflow-y-auto border-r shadow-md">
-      <div class="flex justify-evenly items-center text-gray-50 rounded-full text-justify bg-gray-500">
+      <div class="flex justify-evenly items-center text-gray-50 rounded-full text-justify p-1 poli-bg-secondary cursor-pointer shadow-md hover:bg-cyan-500">
         <mat-icon >person</mat-icon>
-        <p class="text-base">{{userName}}</p>
+        <p class="user-name">{{userName}}</p>
         <div data-toggle="tooltip" data-placement="top" title="Logout">
           <mat-icon (click)="logoutComfirm()" class="cursor-pointer">logout</mat-icon>
         </div>
@@ -12,7 +12,7 @@
         <aside>
           <ul *ngFor="let item of menuItemsList">
             <li class="mt-1">
-              <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md " routerLink = "/home/{{item.itemUri}}">
+              <a class="flex items-center px-4 py-2 text-gray-700 bg-gray-100 rounded-md hover:bg-blue-500 hover:text-white" routerLink = "/home/{{item.itemUri}}">
                 <mat-icon>{{item.icon}}</mat-icon>
                 <span class="mx-4 font-medium">{{item.itemName}}</span>
               </a>
